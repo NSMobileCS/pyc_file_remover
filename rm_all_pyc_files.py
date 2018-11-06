@@ -2,6 +2,11 @@ import os
 import subprocess
 import sys
 
+try:
+    input = raw_input
+except:
+    pass
+
 if len(sys.argv) > 1:
     os.chdir(sys.argv[1])
 
