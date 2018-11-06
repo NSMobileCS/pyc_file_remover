@@ -1,4 +1,9 @@
+import os
 import subprocess
+import sys
+
+if len(sys.argv) > 1:
+    os.chdir(sys.argv[1])
 
 pyc_files = subprocess.check_output(['find', '.', '-name', "'*.pyc'"]).split('\n')
 
