@@ -1,4 +1,6 @@
 {
     "workbench.colorTheme": "Material Theme",
-    "editor.fontFamily": "'Operator Mono', \"Operator Mono Book\", 'comic sans', 'Papyrus Regular'"
+    "editor.fontFamily": "'Operator Mono', \"Operator Mono Book\", 'comic sans', 'Papyrus Regular'",
+    "python.pythonPath": "/usr/local/bin/python",
+    "python.linting.enabled": true
 }
