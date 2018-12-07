@@ -25,7 +25,7 @@ def main():
             print(fp)
             if not fp.endswith('.pyc'):
                 break
-            subprocess.call(['rm', fp])
+            subprocess.call(['rm', '-f', fp])
     return True
 
 if __name__ == '__main__':
