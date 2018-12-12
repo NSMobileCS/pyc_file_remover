@@ -17,15 +17,9 @@ def main(DONT_ASK=False):
         for fname in fnames:
             if fname.endswith('.pyc'):
                 pyc_files.append(os.path.join(dirpath, fname))
-    if DONT_ASK or (
-            input(
-                'found {} pyc files. press r to remove '.
-                    format(len(pyc_files))).
-                        lower() == 'r'
-                        ):      #this line sums up what GvR thinks 
-                            # of my indentation here, probably  
+    if DONT_ASK or input('found {} pyc files. press r to remove '.format(len(pyc_files))) == 'r':
         for fp in pyc_files:
-                print(fp)
+            print(fp)
             if not fp.endswith('.pyc'):
                 break           
         subprocess.call(['rm', '-f', fp])
@@ -36,4 +30,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         os.chdir(sys.argv[1])
     CWD = os.getcwd()
-    main(DONT_ASK=(sys.argv[-1] in ('--yes', '-F', '-y'))) #support several flags why not
+    main(DONT_ASK=(sys.argv[-1] in ('--yes', '-F', '-y'))) #support several flags. why not
