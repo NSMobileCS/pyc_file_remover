@@ -19,10 +19,9 @@ def main(DONT_ASK=False):
                 pyc_files.append(os.path.join(dirpath, fname))
     if DONT_ASK or input('found {} pyc files. press r to remove '.format(len(pyc_files))) == 'r':
         for fp in pyc_files:
-            print(fp)
-            if not fp.endswith('.pyc'):
-                break           
-        subprocess.call(['rm', '-f', fp])
+            assert fp.endswith('.pyc')
+            subprocess.call(['rm', '-f', fp])
+    print('found and removed {} *.pyc files.'.format(len(pyc_files)))
     return True
 
 
